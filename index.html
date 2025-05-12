@@ -21,61 +21,70 @@
       background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
                   url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80 ') center/cover no-repeat;
       text-align: center;
-      padding: 3rem 1rem 2rem;
+      padding: 4rem 1rem 3rem;
     }
 
     header h1 {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
       margin-bottom: 0.5rem;
       color: #ffffff;
     }
 
     header p {
-      font-size: 1rem;
-      max-width: 90%;
+      font-size: 1.1rem;
+      max-width: 600px;
       margin: 0 auto;
       color: #ccc;
     }
 
     .container {
-      max-width: 100%;
-      margin: 1rem auto;
+      max-width: 500px;
+      margin: 2rem auto;
       padding: 0 1rem;
     }
 
-    .movie-section,
-    .upi-section,
-    .tally-form-wrapper,
-    .help-section {
+    .movie-section {
       background: #1f2833;
-      padding: 1.2rem;
+      padding: 1.5rem;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      margin-top: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
       text-align: center;
     }
 
+    .movie-details {
+      margin-top: 1rem;
+    }
+
     .movie-details h2 {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       margin-bottom: 0.5rem;
     }
 
     .movie-details p {
-      font-size: 0.95rem;
-      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .upi-section {
+      background: #1f2833;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      text-align: center;
+      margin-top: 2rem;
     }
 
     .upi-qr {
-      width: 150px;
-      height: 150px;
+      width: 200px;
+      height: 200px;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 12px;
       margin: 1rem auto;
     }
 
     .upi-id {
       font-family: monospace;
-      font-size: 1rem;
+      font-size: 1.1rem;
       margin: 1rem 0;
       word-break: break-all;
       background: #1a1a1a;
@@ -91,11 +100,19 @@
       border-radius: 25px;
       cursor: pointer;
       transition: background 0.3s ease;
-      font-size: 0.95rem;
     }
 
     .copy-btn:hover {
       background: #3a8d8b;
+    }
+
+    .tally-form-wrapper {
+      background: #1f2833;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      margin-top: 2rem;
+      position: relative;
     }
 
     .tally-form-wrapper::before {
@@ -103,12 +120,12 @@
       position: absolute;
       top: 10px;
       left: 15px;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       color: #ffcc00;
     }
 
     .tally-form-wrapper h2 {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       margin-top: 0;
       margin-bottom: 1rem;
       color: #66fcf1;
@@ -117,60 +134,86 @@
 
     iframe {
       width: 100%;
-      min-height: 250px;
-      border-radius: 10px;
+      border: none;
+      min-height: 300px;
     }
 
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem 1rem;
       background: #1f2833;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: #a8b2d1;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
 
-    /* Social Share Buttons */
+    /* Enhanced Social Share Buttons */
     .social-share {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
       display: flex;
-      flex-direction: column;
-      gap: 10px;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .social-button {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 12px;
+      padding: 12px 20px;
       border-radius: 50px;
       font-weight: 500;
       text-decoration: none;
       font-size: 1rem;
       transition: all 0.3s ease;
-      background-color: #45a29e;
-      color: #fff;
-      text-align: center;
+      min-width: 160px;
     }
 
     .social-button i {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
 
-    .facebook { background-color: #1877f2; }
-    .twitter { background-color: #1da1f2; }
-    .whatsapp { background-color: #25d366; }
+    .facebook {
+      background-color: #1877f2;
+      color: #fff;
+    }
 
-    .social-button:hover {
-      opacity: 0.9;
+    .facebook:hover {
+      background-color: #166fe5;
+    }
+
+    .twitter {
+      background-color: #1da1f2;
+      color: #fff;
+    }
+
+    .twitter:hover {
+      background-color: #1991db;
+    }
+
+    .whatsapp {
+      background-color: #25d366;
+      color: #fff;
+    }
+
+    .whatsapp:hover {
+      background-color: #1ebf5b;
     }
 
     /* Help Section */
+    .help-section {
+      background: #1f2833;
+      margin-top: 2rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
     .help-header {
       background: #2c343f;
-      padding: 0.8rem;
-      font-size: 1rem;
+      padding: 1rem;
+      font-size: 1.1rem;
       cursor: pointer;
       user-select: none;
       border-bottom: 1px solid #45a29e;
@@ -184,10 +227,10 @@
     }
 
     .help-content {
-      padding: 0.8rem;
+      padding: 1rem;
       display: none;
       background: #1a1a1a;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #ccc;
     }
 
@@ -196,9 +239,12 @@
     }
 
     .contact-info {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
       text-align: center;
-      font-size: 0.9rem;
+    }
+
+    .contact-info p {
+      margin: 0;
     }
 
     .contact-info a {
@@ -207,16 +253,10 @@
     }
 
     .donation-note {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: #aaa;
       margin-top: 0.5rem;
       display: block;
-    }
-
-    button.play-trailer {
-      margin-top: 1rem;
-      width: 100%;
-      font-size: 1rem;
     }
   </style>
 </head>
@@ -240,7 +280,7 @@
     </div>
 
     <!-- Play Trailer Button -->
-    <button class="copy-btn play-trailer" onclick="window.open('https://www.imdb.com/title/tt13872248/trailers ')">Play Trailer</button>
+    <button class="copy-btn" onclick="window.open('https://www.imdb.com/title/tt13872248/trailers ')">Play Trailer</button>
   </section>
 
   <!-- UPI Donation Section -->
@@ -249,7 +289,7 @@
     <p>Scan the QR code below or copy the UPI ID to donate:</p>
 
     <!-- UPI QR Code -->
-    <img src="https://quickchart.io/qr?text=pk544726-1%40okaxis&size=150 " alt="UPI QR Code" class="upi-qr" />
+    <img src="https://quickchart.io/qr?text=pk544726-1%40okaxis&size=200 " alt="UPI QR Code" class="upi-qr" />
 
     <!-- UPI ID Display -->
     <div class="upi-id" id="upiId">pk544726-1@okaxis</div>
@@ -269,7 +309,7 @@
     <iframe data-tally-src="https://tally.so/embed/w4qDVr?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1 "
             loading="lazy"
             width="100%"
-            height="250"
+            height="277"
             frameborder="0"
             marginheight="0"
             marginwidth="0"
@@ -291,13 +331,13 @@
   <!-- Enhanced Social Share Buttons -->
   <section class="social-share">
     <a class="social-button facebook" href="https://www.facebook.com/sharer/sharer.php?u=https ://your-donation-site.com" target="_blank">
-      <i class="fab fa-facebook-f"></i> Share on Facebook
+      <i class="fab fa-facebook-f"></i> Share
     </a>
     <a class="social-button twitter" href="https://twitter.com/share?url=https ://your-donation-site.com&text=Support%20The%20Sadness%20Movie!" target="_blank">
-      <i class="fab fa-twitter"></i> Tweet about it
+      <i class="fab fa-twitter"></i> Tweet
     </a>
     <a class="social-button whatsapp" href="https://api.whatsapp.com/send?text=Check%20out%20The%20Sadness%20Movie :%20https://your-donation-site.com " target="_blank">
-      <i class="fab fa-whatsapp"></i> Share on WhatsApp
+      <i class="fab fa-whatsapp"></i> WhatsApp
     </a>
   </section>
 
