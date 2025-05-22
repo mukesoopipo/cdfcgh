@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="google-site-verification" content="EHLxw0pmldZwBTghujdtnIioarvpjEdHriLPNdu3S3E" />
   <title>The Sadness - Movie Donation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter :wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css " integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qoD2lgruYsnlQGih9+PC0W1oyzNKWkX5Eu3MCIy7F2iR5jU5gTDdjp7gF0I9MyE2nA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css " />
   <style>
     * { box-sizing: border-box; }
     body {
@@ -43,6 +44,7 @@
       padding: 0 1rem;
     }
 
+    .donation-goal-section,
     .movie-section,
     .upi-section,
     .tally-form-wrapper,
@@ -53,6 +55,34 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.4);
       margin-top: 1.5rem;
       text-align: center;
+    }
+
+    /* Donation Goal Styles */
+    .donation-goal-section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #66fcf1;
+    }
+
+    .goal-progress-container {
+      background: #1a1a1a;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 20px;
+      margin: 10px 0;
+    }
+
+    .goal-progress-bar {
+      height: 100%;
+      width: 0%;
+      transition: width 1s ease-in-out, background-color 0.5s ease;
+    }
+
+    .goal-amounts {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: #aaa;
     }
 
     .movie-details h2 {
@@ -229,6 +259,18 @@
 
 <div class="container">
 
+  <!-- Donation Goal Section -->
+  <section class="donation-goal-section">
+    <h2>Donation Goal: ₹5,000</h2>
+    <div class="goal-progress-container">
+      <div class="goal-progress-bar" id="progressBar"></div>
+    </div>
+    <div class="goal-amounts">
+      <span id="raisedAmount">—</span>
+      <span>₹5,000 Goal</span>
+    </div>
+  </section>
+
   <!-- Movie Section -->
   <section class="movie-section">
     <div class="movie-details">
@@ -329,6 +371,39 @@
     s.onerror=v;
     d.body.appendChild(s);
   }
+</script>
+
+<!-- Dynamic Progress Bar Script -->
+<script>
+  const progressBar = document.getElementById("progressBar");
+  const raisedAmountText = document.getElementById("raisedAmount");
+
+  // You can change these values dynamically from a backend
+  const goal = 5000;
+  let raised = 2956; // Replace with real-time value later
+
+  function updateProgressBar(amount) {
+    const percent = Math.min((amount / goal) * 100, 100);
+    progressBar.style.width = `${percent}%`;
+
+    // Change color based on percentage
+    if (percent < 50) {
+      progressBar.style.backgroundColor = "#45a29e"; // Green
+    } else if (percent < 80) {
+      progressBar.style.backgroundColor = "#f7dc6f"; // Yellow
+    } else {
+      progressBar.style.backgroundColor = "#e74c3c"; // Red
+    }
+
+    raisedAmountText.textContent = `₹${amount.toLocaleString()} Raised`;
+  }
+
+  // Simulate manual update
+  window.addEventListener("load", () => {
+    updateProgressBar(raised);
+  });
+
+  // Optional: Fetch live data from Google Sheet or API
 </script>
 
 <!-- Copy UPI Function -->
